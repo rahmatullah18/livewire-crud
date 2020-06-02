@@ -14,7 +14,8 @@ class StudentIndex extends Component
 
 
     public $listeners = [
-        'studentStored'
+        'studentStored',
+        'studentUpdated',
     ];
 
     public function render()
@@ -26,6 +27,12 @@ class StudentIndex extends Component
     public function studentStored($student)
     {
         session()->flash('tambah', 'Data ' . $student['nama'] . ' Ditambahkan');
+    }
+
+    public function studentUpdated($student)
+    {
+        session()->flash('update', 'Data ' . $student['nama'] . ' Diupdate');
+        $this->updateStatus = false;
     }
 
     public function destroy($id)

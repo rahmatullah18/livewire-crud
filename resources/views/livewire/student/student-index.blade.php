@@ -2,7 +2,11 @@
     {{-- In work, do what you enjoy. --}}
     <div class="row">
         <div class="col-12 mb-4">
-            <livewire:student.student-create>
+            @if ($updateStatus === true)
+                <livewire:student.student-update>
+                @else
+                <livewire:student.student-create>
+            @endif
         </div>
     </div>
 
