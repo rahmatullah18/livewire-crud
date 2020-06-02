@@ -5,9 +5,9 @@
 @section('content')
     
     <div class="container">
-        <div class="card">
+        <div class="card mt-5">
             <div class="card-body">
-                <livewire:students.student-index>
+                <livewire:student.student-index>
             </div>
         </div>
     </div>
