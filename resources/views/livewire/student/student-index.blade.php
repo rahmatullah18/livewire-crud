@@ -1,5 +1,11 @@
 <div>
     {{-- In work, do what you enjoy. --}}
+    <div class="row">
+        <div class="col-12 mb-4">
+            <livewire:student.student-create>
+        </div>
+    </div>
+
     <table class="table table-hover">
         <thead>
             <tr>

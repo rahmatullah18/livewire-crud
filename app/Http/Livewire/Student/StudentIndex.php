@@ -10,11 +10,22 @@ class StudentIndex extends Component
 {
 
     use WithPagination;
+    public $updateStatus = false;
+
+
+    public $listeners = [
+        'studentStored'
+    ];
 
     public function render()
     {
         $students = Student::latest()->paginate(5);
         return view('livewire.student.student-index', compact('students'));
+    }
+
+    public function studentStored($student)
+    {
+        session()->flash('tambah', 'Data ' . $student['nama'] . ' Ditambahkan');
     }
 
     public function destroy($id)
@@ -23,7 +34,14 @@ class StudentIndex extends Component
             $data = Student::find($id);
             $data->delete();
 
-            session()->flash('Data ' . $data['nama'] . ' berhasil dihapus');
+            session()->flash('hapus','Data ' . $data['nama'] . ' berhasil dihapus');
         }
+    }
+
+    public function getStudent($id)
+    {
+        $this->updateStatus = true;
+        $student = Student::find($id);
+        $this->emit('getStudent', $student);
     }
 }
