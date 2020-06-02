@@ -15,6 +15,12 @@ class StudentCreate extends Component
 
     public function store()
     {
+        $this->validate([
+            'nama' => 'required',
+            'nim' => 'required|max:6',
+            'jurusan' => 'required',
+        ]);
+
         $student = Student::create([
             'nama' => $this->nama,
             'nim' => $this->nim,

@@ -28,6 +28,12 @@ class StudentUpdate extends Component
 
     public function update()
     {
+        $this->validate([
+            'nama' => 'required',
+            'nim' => 'required|max:6',
+            'jurusan' => 'required',
+        ]);
+        
         if ($this->id) {
             $student = Student::find($this->studentId);
             $student->update([
