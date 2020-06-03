@@ -20,6 +20,9 @@ https://getcomposer.org/
 # akses directory
 cd livewire-crud
 
+# jalankan composer update (lama download tergantung dari jaringan kalian)
+composer update
+
 # ubah nama file .env.example menjadi .env
 .env
 
