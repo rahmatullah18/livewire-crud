@@ -12,7 +12,6 @@
     <livewire:styles>
   </head>
   <body>
-    
     @yield('content')
 
     <!-- Optional JavaScript -->

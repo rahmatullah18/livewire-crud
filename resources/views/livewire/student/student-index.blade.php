@@ -1,5 +1,8 @@
 <div>
     {{-- In work, do what you enjoy. --}}
+    <div class="col-12">
+      @include('layouts.alerts')
+    </div>
     <div class="row">
         <div class="col-12 mb-4">
             @if ($updateStatus === true)
