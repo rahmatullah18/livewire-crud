@@ -20,6 +20,9 @@ https://getcomposer.org/
 # akses directory
 cd livewire-crud
 
+# ubah nama file .env.example menjadi .env
+.env
+
 # Buat database livewire_crud dan edit file .env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
